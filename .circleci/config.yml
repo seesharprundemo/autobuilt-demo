@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: microsoft/dotnet:2.0.0-sdk
+    steps:
+      - checkout
+      - run:
+          name: Test DotNet Core
+          command: dotnet --version
+      - run:
+          name: Restore Packages
+          command: dotnet restore  
+      - run:
+          name: Build OSX Package
+          command: dotnet publish --configuration Release --runtime osx.10.11-x64
+      - store_artifacts:
+          path: ~/source/.build/out
+      - run:
+          name: Build Windows Package
+          command: dotnet publish --configuration Release --runtime win10-x64
+      - store_artifacts:
+          path: ~/source/bin/release/netcoreapp2.0

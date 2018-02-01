@@ -15,9 +15,9 @@ jobs:
           name: Build OSX Package
           command: dotnet publish --configuration Release --runtime osx.10.11-x64
       - store_artifacts:
-          path: ~/source/.build/out
+          path: ~/source/bin/release/netcoreapp2.0/osx.10.11-x64
       - run:
           name: Build Windows Package
           command: dotnet publish --configuration Release --runtime win10-x64
       - store_artifacts:
-          path: ~/source/bin/release/netcoreapp2.0
+          path: ~/source/bin/release/netcoreapp2.0/win10-x64

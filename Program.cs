@@ -6,7 +6,7 @@ namespace AutoBuilt
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello Everyone!");
             Console.Write("Press any key to continue");
             Console.ReadKey();
         }
